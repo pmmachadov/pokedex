@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+import './App.css';
+import Logo from './Logo';
+import BestPokemon from './BestPokemon';
+import CaughtPokemon from './CaughtPokemon';
+
+
+const App = () => {
+  const abilities = ['lightning-rod', 'static', 'surge-surfer'];
+  const date = new Date().toLocaleDateString();
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Logo appName="Pokedex" />
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png" alt="pidgey" className='logo-img' />
+      <BestPokemon abilities={ abilities } />
+      <CaughtPokemon date={ date } />
     </div>
   );
 }
