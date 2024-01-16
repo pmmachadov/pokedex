@@ -20,7 +20,7 @@ Logo.propTypes = {
     appName: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
     altText: PropTypes.string.isRequired,
-    className: PropTypes,
+    className: PropTypes.string,
     handleClick: PropTypes.func.isRequired,
 }
 
