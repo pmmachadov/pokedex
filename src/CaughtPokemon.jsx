@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 const CaughtPokemon = (props) => {
 
+    const [caught, setCaught] = useState(0);
+
+    const catchPokemon = () => {
+        setCaught(caught + 1);
+    };
+
     return (
-        <p>Caught 0 Pokémon on { props.date }</p>
+        <>
+            <p>Caught { caught } Pokémon on { props.date }</p>
+            <button onClick={ catchPokemon }>Catch Pokémon</button>
+        </>
     );
 }
 

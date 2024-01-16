@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem;
+}
+
+img {
+    width: 10rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000000;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-button {
+    background-color: #000000;
+    padding: 0;
+    margin: 0;
+}
