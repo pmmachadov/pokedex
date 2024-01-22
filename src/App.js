@@ -1,8 +1,9 @@
 import React from 'react';
-import './index.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Logo from './Logo';
 import BestPokemon from './BestPokemon';
 import CaughtPokemon from './CaughtPokemon';
+import PokemonInfo from './PokemonInfo'; // Importa PokemonInfo component
 
 const App = () => {
   const abilities = ['lightning-rod', 'static', 'surge-surfer'];
@@ -13,7 +14,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <BrowserRouter>
       <Logo
         appName="Pokedex"
         imageUrl="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"
@@ -21,9 +22,17 @@ const App = () => {
         className='logo-img'
         handleClick={ logWhenClicked }
       />
-      <BestPokemon abilities={ abilities } />
-      <CaughtPokemon date={ date } />
-    </div>
+      <div className="link-container">
+        <Link to="/best-pokemon">Best Pokemon</Link>
+        <Link to="/caught-pokemon">Caught Pokemon</Link>
+      </div>
+
+      <Routes>
+        <Route path="/best-pokemon" element={ <BestPokemon abilities={ abilities } /> } />
+        <Route path="/caught-pokemon" element={ <CaughtPokemon date={ date } /> } />
+        <Route path="/pokemon/:id" element={ <PokemonInfo /> } /> {/* Dynamic URL parameter for ID */ }
+      </Routes>
+    </BrowserRouter>
   );
 }
 
